@@ -1,38 +1,49 @@
-hedg<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Haven and Hedge Ltd</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
+      background-color: #f8f9fa;
+      color: #333;
     }
+
     header {
       background: url('https://source.unsplash.com/1600x600/?garden,home') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 120px 20px;
+      padding: 100px 20px;
     }
+
     header h1 {
-      font-size: 3em;
+      font-size: 3rem;
       animation: fadeIn 2s ease-in-out;
     }
+
     nav {
       background: #2e7d32;
       padding: 1em;
       text-align: center;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      transition: color 0.3s;
     }
+
+    nav a:hover {
+      color: #c8e6c9;
+    }
+
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -41,24 +52,61 @@ hedg<!DOCTYPE html>
       transform: translateY(20px);
       transition: all 1s ease-out;
     }
+
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .services img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
+
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin-top: 30px;
     }
+
+    .service-box {
+      flex: 1 1 45%;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .service-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
     footer {
       background: #333;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
+      margin-top: 40px;
     }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
+    }
+
+    @media (max-width: 768px) {
+      .services-container {
+        flex-direction: column;
+      }
+      .service-box {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
@@ -66,7 +114,7 @@ hedg<!DOCTYPE html>
 
   <header>
     <h1>Haven and Hedge Ltd</h1>
-    <p>Gardening & House Cleaning Services You Can Trust</p>
+    <p>Expert Gardening & House Cleaning Services You Can Trust</p>
   </header>
 
   <nav>
@@ -75,53 +123,8 @@ hedg<!DOCTYPE html>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="services" class="services">
-  <h2>Our Services</h2>
-  <p>We offer expert gardening and top-quality house cleaning tailored to your needs.</p>
-  <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-    
-    <div>
-      <img src="2.jpg" alt="Gardening">
-      <h3>Gardening</h3>
-      <p>From lawn care to landscaping, we keep your outdoor space flourishing.</p>
-    </div>
+  <section id="services">
+    <h2>Our Services</h2>
+    <p>We provide reliable, professional services to maintain your home's beauty and cleanliness. Our offerings include:</p>
 
-    <div>
-      <img src="1.jpg" alt="House Cleaning">
-      <h3>House Cleaning</h3>
-      <p>Spotless cleaning services that make your home shine, inside and out.</p>
-    </div>
-
-  </div>
-</section>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Haven and Hedge Ltd is a local, business with a passion for helping homes and gardens thrive. Our professional, friendly staff bring excellence and care to every job we do.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: havenhedgeltd@outlook.com</p>
-    <p>Phone: +44 7448232346</p>
-  </section>
-
-  <footer>
-    <p>© 2025 Haven and Hedge Ltd. All rights reserved.</p>
-  </footer>
-
-  <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
-
-</body>
-</html>
+    <div class="servic
