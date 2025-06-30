@@ -17,15 +17,15 @@
 
     header {
       position: relative;
-      /* New image for header background */
       background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-
-      height: 25vh; /* smaller height */
+      height: 15vh; /* very small header */
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
+      padding: 0 10px;
     }
 
     header::before {
@@ -33,21 +33,24 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
     }
 
     header h1, header p {
       position: relative;
       z-index: 1;
+      margin: 0;
+      line-height: 1;
     }
 
     header h1 {
-      font-size: 2rem; /* smaller font */
-      margin-bottom: 0.5rem;
+      font-size: 1.2rem; /* smaller font */
       font-weight: bold;
     }
 
     header p {
-      font-size: 1rem; /* smaller font */
+      font-size: 0.8rem; /* smaller font */
+      margin-top: 0.2rem;
     }
 
     nav {
@@ -191,5 +194,7 @@
   </script>
 
 </body>
+</html>
+
 </html>
 
