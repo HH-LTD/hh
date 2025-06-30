@@ -6,42 +6,59 @@
   <title>Haven and Hedge Ltd</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
-      background-color: #f8f9fa;
+      background: #f9f9f9;
       color: #333;
     }
 
     header {
+      position: relative;
       background: url('https://source.unsplash.com/1600x600/?garden,home') center/cover no-repeat;
-      color: white;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 100px 20px;
+      color: white;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
       font-size: 3rem;
-      animation: fadeIn 2s ease-in-out;
+      margin-bottom: 1rem;
+      font-weight: bold;
     }
 
     nav {
       background: #2e7d32;
-      padding: 1em;
+      padding: 1rem;
       text-align: center;
     }
 
     nav a {
       color: white;
-      text-decoration: none;
       margin: 0 15px;
+      text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #c8e6c9;
+      text-decoration: underline;
     }
 
     section {
@@ -50,7 +67,7 @@
       margin: auto;
       opacity: 0;
       transform: translateY(20px);
-      transition: all 1s ease-out;
+      transition: all 0.8s ease-out;
     }
 
     section.visible {
@@ -61,9 +78,8 @@
     .services-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       gap: 30px;
-      margin-top: 30px;
+      justify-content: space-between;
     }
 
     .service-box {
@@ -71,41 +87,30 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       text-align: center;
     }
 
     .service-box img {
-      max-width: 100%;
-      height: auto;
+      width: 100%;
+      max-height: 240px;
+      object-fit: cover;
       border-radius: 8px;
       margin-bottom: 15px;
     }
 
     footer {
-      background: #333;
+      background: #222;
       color: white;
       text-align: center;
       padding: 30px 20px;
-      margin-top: 40px;
-    }
-
-    footer p {
-      margin: 5px 0;
+      margin-top: 60px;
       font-size: 0.9em;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
     }
 
     @media (max-width: 768px) {
       .services-container {
         flex-direction: column;
-      }
-      .service-box {
-        flex: 1 1 100%;
       }
     }
   </style>
@@ -113,8 +118,10 @@
 <body>
 
   <header>
-    <h1>Haven and Hedge Ltd</h1>
-    <p>Expert Gardening & House Cleaning Services You Can Trust</p>
+    <div>
+      <h1>Haven and Hedge Ltd</h1>
+      <p>Gardening & House Cleaning Services You Can Trust</p>
+    </div>
   </header>
 
   <nav>
@@ -125,28 +132,26 @@
 
   <section id="services">
     <h2>Our Services</h2>
-    <p>We provide reliable, professional services to maintain your home's beauty and cleanliness. Our offerings include:</p>
-
+    <p>Professional gardening and house cleaning solutions for your home and outdoor spaces.</p>
     <div class="services-container">
       <div class="service-box">
         <img src="2.jpg" alt="Gardening">
         <h3>Gardening Services</h3>
-        <ul style="text-align: left;">
-          <li>Lawn mowing & edging</li>
-          <li>Weed removal & mulching</li>
-          <li>Planting, pruning & hedge trimming</li>
-          <li>Garden cleanup and waste removal</li>
+        <ul style="text-align:left;">
+          <li>Lawn mowing & trimming</li>
+          <li>Weeding & garden clean-up</li>
+          <li>Seasonal planting & mulching</li>
+          <li>Hedge trimming and maintenance</li>
         </ul>
       </div>
-
       <div class="service-box">
         <img src="1.jpg" alt="House Cleaning">
         <h3>House Cleaning</h3>
-        <ul style="text-align: left;">
-          <li>Regular or one-off deep cleaning</li>
+        <ul style="text-align:left;">
+          <li>Regular home cleaning</li>
+          <li>Deep cleaning</li>
           <li>End-of-tenancy cleaning</li>
-          <li>Bathroom & kitchen sanitisation</li>
-          <li>Window & floor cleaning</li>
+          <li>Window & floor polishing</li>
         </ul>
       </div>
     </div>
@@ -154,20 +159,19 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Haven and Hedge Ltd is a proudly local business based in the UK, delivering top-tier gardening and house cleaning services since 2022. We are passionate about enhancing outdoor and indoor spaces, helping busy homeowners enjoy a well-kept home without the stress.</p>
-    <p>Our team is friendly, insured, and dedicated to high standards of service and customer care.</p>
+    <p>Haven and Hedge Ltd is a trusted UK-based company providing top-notch gardening and home cleaning services since 2022. We serve both residential and commercial clients and take pride in offering eco-friendly and reliable services.</p>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
     <p><strong>Email:</strong> <a href="mailto:havenhedgeltd@outlook.com">havenhedgeltd@outlook.com</a></p>
     <p><strong>Phone:</strong> +44 7448 232346</p>
-    
+    <p><strong>Location:</strong> Serving Greater London and surrounding areas</p>
   </section>
 
   <footer>
     <p>© 2025 Haven and Hedge Ltd. All rights reserved.</p>
-    <p>Website built with love by Haven and Hedge Ltd.</p>
+    <p>Website designed with care and attention.</p>
   </footer>
 
   <script>
