@@ -17,9 +17,10 @@
 
     header {
       position: relative;
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      /* New image for header background */
+      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
 
-      height: 60vh;
+      height: 35vh; /* smaller height */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -40,9 +41,13 @@
     }
 
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 2rem; /* smaller font */
+      margin-bottom: 0.5rem;
       font-weight: bold;
+    }
+
+    header p {
+      font-size: 1rem; /* smaller font */
     }
 
     nav {
@@ -119,12 +124,9 @@
 <body>
 
   <header class="hero-header">
-  <div class="overlay">
     <h1>Haven and Hedge Ltd</h1>
     <p>Gardening & House Cleaning Services You Can Trust</p>
-  </div>
-</header>
-
+  </header>
 
   <nav>
     <a href="#services">Services</a>
@@ -190,3 +192,4 @@
 
 </body>
 </html>
+
