@@ -127,4 +127,60 @@
     <h2>Our Services</h2>
     <p>We provide reliable, professional services to maintain your home's beauty and cleanliness. Our offerings include:</p>
 
-    <div class="servic
+    <div class="services-container">
+      <div class="service-box">
+        <img src="2.jpg" alt="Gardening">
+        <h3>Gardening Services</h3>
+        <ul style="text-align: left;">
+          <li>Lawn mowing & edging</li>
+          <li>Weed removal & mulching</li>
+          <li>Planting, pruning & hedge trimming</li>
+          <li>Garden cleanup and waste removal</li>
+        </ul>
+      </div>
+
+      <div class="service-box">
+        <img src="1.jpg" alt="House Cleaning">
+        <h3>House Cleaning</h3>
+        <ul style="text-align: left;">
+          <li>Regular or one-off deep cleaning</li>
+          <li>End-of-tenancy cleaning</li>
+          <li>Bathroom & kitchen sanitisation</li>
+          <li>Window & floor cleaning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Haven and Hedge Ltd is a proudly local business based in the UK, delivering top-tier gardening and house cleaning services since 2022. We are passionate about enhancing outdoor and indoor spaces, helping busy homeowners enjoy a well-kept home without the stress.</p>
+    <p>Our team is friendly, insured, and dedicated to high standards of service and customer care.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Email:</strong> <a href="mailto:havenhedgeltd@outlook.com">havenhedgeltd@outlook.com</a></p>
+    <p><strong>Phone:</strong> +44 7448 232346</p>
+    
+  </section>
+
+  <footer>
+    <p>© 2025 Haven and Hedge Ltd. All rights reserved.</p>
+    <p>Website built with love by Haven and Hedge Ltd.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
